@@ -1,0 +1,9 @@
+10123:
+  BlockBeSetedTo: "BEDROCK"
+  Cooldown: 3
+  World: ["world", "Hypixel"]
+  Blocks:
+    DIAMOND_ORE:
+      rate: 50
+    IRON_ORE:
+      rate: 50
