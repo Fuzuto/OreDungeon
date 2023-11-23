@@ -1,5 +1,5 @@
-10123:
-  BlockBeSetedTo: "BEDROCK"
+10123: #BlockTypeId
+  BlockBeSetedTo: "BEDROCK" #While cooldown
   Cooldown: 3
   World: ["world", "Hypixel"]
   Blocks:
