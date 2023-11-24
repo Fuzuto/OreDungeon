@@ -47,15 +47,14 @@ class Main extends PluginBase implements Listener{
                     $BlockBeSetedTo = strtoupper($this->config->get($blockId)['BlockBeSetedTo']);
                     $block->getPosition()->getWorld()->setBlock($block->getPosition(), VanillaBlocks::$BlockBeSetedTo(), true, true);
                     $rate = 0;
-                    $status = 0;
                     foreach($this->config->get($blockId)['Blocks'] as $blockName => $data){
-                        if((int)$data['rate'] + $rate >= mt_rand(1, 100) and $status == 0){
+                        if((int)$data['rate'] + $rate >= mt_rand(1, 100)){
                             $blockName = strtoupper($blockName);
                             $resetBlock = VanillaBlocks::$blockName();
                             if(isset($this->config->get($blockId)['BlockBeSetedTo'])){
                                 $this->runTask($block, $blockId, $resetBlock);
                             }
-                            $status = 1;
+                            break;
                         }else{
                             $rate += (int)$data['rate'];
                         }
