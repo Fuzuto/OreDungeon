@@ -2,8 +2,6 @@
 
 namespace OreDunegon;
 
-use pocketmine\player\Player;
-
 use pocketmine\plugin\PluginBase;
 
 use pocketmine\event\Listener;
@@ -19,7 +17,7 @@ use pocketmine\world\particle\BlockBreakParticle;
 
 class Main extends PluginBase implements Listener{
     
-    public $config;
+    public Config $config;
     
     public function onEnable(): void{
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
