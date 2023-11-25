@@ -1,2 +1,2 @@
 # OreDungeon
-OreDungeon Plugin like Hypixel!
+OreDungeon Plugin for Pocketmine-MP like Hypixel!
