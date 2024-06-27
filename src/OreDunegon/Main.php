@@ -13,8 +13,6 @@ use pocketmine\scheduler\ClosureTask;
 
 use pocketmine\utils\Config;
 
-use pocketmine\world\particle\BlockBreakParticle;
-
 class Main extends PluginBase implements Listener{
     
     public Config $config;
@@ -29,9 +27,7 @@ class Main extends PluginBase implements Listener{
         $blockId = $block->getTypeId();
         $drops = $event->getDrops();
         $player = $event->getPlayer();
-        $event->cancel(true);
-        $block->getPosition()->getWorld()->setBlock($block->getPosition(), VanillaBlocks::AIR(), true, true);
-        $block->getPosition()->getWorld()->addParticle($block->getPosition()->add(0.5, 0.5, 0.5), new BlockBreakParticle($block));
+        $event->cancel();
         foreach($drops as $item){
             if($player->getInventory()->canAddItem($item)){
                 $player->getInventory()->addItem($item);
